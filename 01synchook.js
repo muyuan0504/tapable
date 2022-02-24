@@ -8,7 +8,7 @@
 const { SyncHook } = require('tapable')
 
 // All Hook constructors take one optional argument, which is a list of argument names as strings.
-// 数组的长度对应参数的个数，不可以为空字符,null之类的
+// 数组的长度对应参数的个数，参数只能为【非空】字符
 const hook = new SyncHook(['jimous'])
 
 // For sync hooks, tap is the only valid method to add a plugin

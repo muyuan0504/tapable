@@ -1,22 +1,21 @@
 /*
- * @Date: 2022-02-24 13:15:23
+ * @Date: 2022-02-24 15:14:41
  * @LastEditors: jimouspeng
- * @Description: AsyncParallelHook-异步并行执行,当所有插件都执行完毕的时候,执行回调
- * @LastEditTime: 2022-02-24 15:13:11
- * @FilePath: \tapable\05asyncparallelhook.js
+ * @Description: AsyncSeriesHook-串行,插件一个一个的按顺序执行
+ * @LastEditTime: 2022-02-24 15:17:21
+ * @FilePath: \tapable\07asyncserieshook.js
  */
 
-const { AsyncParallelHook } = require('tapable')
+const { AsyncSeriesHook } = require('tapable')
 
-/** 不传参数 */
-const hook = new AsyncParallelHook()
+const hook = new AsyncSeriesHook()
 
 // 异步钩子注册方式： tapAsync,  tapPromise(return a promise)
 
 hook.tapAsync('a', (callback) => {
     setTimeout(() => {
         console.log('a-----1')
-        callback()
+        callback(1) // callback有输出时，后续插件不调用
     }, 3000)
 })
 
@@ -34,6 +33,6 @@ hook.tapAsync('c', (callback) => {
     }, 1000)
 })
 
-hook.callAsync(() => {
-    console.log('执行完毕~~~')
+hook.callAsync((res) => {
+    console.log('执行完毕~~~', res)
 })
