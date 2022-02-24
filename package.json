@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/jimouspeng/tapable/issues"
   },
-  "homepage": "https://github.com/jimouspeng/tapable#readme"
+  "homepage": "https://github.com/jimouspeng/tapable#readme",
+  "dependencies": {
+    "tapable": "^2.2.1"
+  }
 }
