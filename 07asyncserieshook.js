@@ -1,8 +1,8 @@
 /*
  * @Date: 2022-02-24 15:14:41
- * @LastEditors: jimouspeng
+ * @LastEditors: Please set LastEditors
  * @Description: AsyncSeriesHook-串行,插件一个一个的按顺序执行
- * @LastEditTime: 2022-02-24 15:17:21
+ * @LastEditTime: 2022-12-12 15:57:11
  * @FilePath: \tapable\07asyncserieshook.js
  */
 
@@ -15,7 +15,7 @@ const hook = new AsyncSeriesHook()
 hook.tapAsync('a', (callback) => {
     setTimeout(() => {
         console.log('a-----1')
-        callback(1) // callback有输出时，后续插件不调用
+        callback() // callback有输出时，后续插件不调用
     }, 3000)
 })
 

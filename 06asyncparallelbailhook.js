@@ -1,9 +1,9 @@
 /*
  * @Date: 2022-02-24 15:04:02
- * @LastEditors: jimouspeng
+ * @LastEditors: Please set LastEditors
  * @Description: AsyncParallelBailHook
  * 当第一个插件注册的钩子执行结束后，会进行bail(熔断), 然后会调用最终的回调，无论其他插件是否执行完
- * @LastEditTime: 2022-02-24 15:14:19
+ * @LastEditTime: 2022-12-12 15:51:00
  * @FilePath: \tapable\06asyncparallelbailhook.js
  */
 
